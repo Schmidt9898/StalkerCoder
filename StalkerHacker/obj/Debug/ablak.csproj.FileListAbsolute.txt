@@ -1,0 +1,16 @@
+C:\Users\Schmidtlacus\source\repos\ablak\bin\Debug\ablak.exe.config
+C:\Users\Schmidtlacus\source\repos\ablak\bin\Debug\ablak.exe
+C:\Users\Schmidtlacus\source\repos\ablak\bin\Debug\ablak.pdb
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\MainWindow.g.cs
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\App.g.cs
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak_MarkupCompile.cache
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak_MarkupCompile.lref
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\MainWindow.baml
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.g.resources
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.Properties.Resources.resources
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.csproj.GenerateResource.cache
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.csproj.CoreCompileInputs.cache
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.exe
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.pdb
+C:\Users\Schmidtlacus\source\repos\ablak\bin\Debug\hackerlogo (2).png
+C:\Users\Schmidtlacus\source\repos\ablak\obj\Debug\ablak.csprojAssemblyReference.cache
