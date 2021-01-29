@@ -26,29 +26,13 @@ namespace ablak
         double progres = 0;
         double sec = 30;
         bool animate = false;
+        int keypressed = 0;
+        Queue<Key> pressedkeys = new Queue<Key>();
 
         int iT = 0;
-        string[] flipbook = {
-            "\nCracking started.",
-            "\nPlease Wait.",
-            ".",
-            ".",
-            "\nBypassing security relay.",
-            ".",
-            ".",
-            "\nOverriding kernel input.",
-            "\nObviously.",
-            "\n:)",
-            "\nGathering data.",
-            ".",
-            ".",
-            "\nThis may take a while.",
-            ".",
-            "\nHold on.",
-            ".",
-            ".",
-            "\nAlmost there.",
-        };
+        string hackingstring = "";
+        string spaceholder = "";
+            
 
 
 
@@ -56,9 +40,23 @@ namespace ablak
         {
             InitializeComponent();
 
+            pressedkeys.Enqueue(Key.A);
+            pressedkeys.Enqueue(Key.B);
+            pressedkeys.Enqueue(Key.C);
+            pressedkeys.Enqueue(Key.D);
+            pressedkeys.Enqueue(Key.E);
+
+            try
+            {
+            hackingstring = System.IO.File.ReadAllText("hackingstring.txt");
             database = new Database("pass.txt");
+            }catch(Exception e)
+            {
+                outputbox.Text = "Hacking Mainframe cant be loaded!!!";
+            }
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+
+            timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += timer_Tick;
             timer.Start();
 
@@ -69,16 +67,17 @@ namespace ablak
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            progres = (double)keypressed/5.0;
             progresbar.Value = progres;
 
-            double step = 100/sec;
+            //double step = 100/sec;
             if(animate)
             {
-                progres += step;
-                outputbox.Text = outputbox.Text + flipbook[iT];
-                iT++;
-                if (iT >= flipbook.Length)
-                    iT = 0;
+                //  progres += step;
+                outputbox.Text = spaceholder+hackingstring.Substring(0,iT); 
+                
+                //if (iT >= flipbook.Length)
+                 //   iT = 0;
                 if (progres>100)
                 {
                     gomb.IsEnabled = true;
@@ -89,6 +88,7 @@ namespace ablak
                     else
                         outputbox.Text = "!!!CRACKING FAILED!!!";
                     animate = false;
+                    inputbox.Focusable = true;
                 }
                 outputbox.ScrollToEnd();
             }
@@ -101,9 +101,12 @@ namespace ablak
             progres = 0;
             outputbox.Clear();
             iT = 0;
+            spaceholder = "";
+            keypressed = 0;
             animate = true;
+            inputbox.Focusable = false;
 
-            
+
         }
 
         private void inputbox_KeyDown(object sender, KeyEventArgs e)
@@ -114,7 +117,10 @@ namespace ablak
                 progres = 0;
                 outputbox.Clear();
                 iT = 0;
+                spaceholder = "";
+                keypressed = 0;
                 animate = true;
+                inputbox.Focusable = false;
             }
         }
 
@@ -124,6 +130,24 @@ namespace ablak
             string name = Regex.Replace(files[0], @"\w*\:\\(.)*\\", "");
             name = name.Split('.')[0];
             inputbox.Text = name;
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (!pressedkeys.Contains(e.Key))
+            {
+                pressedkeys.Dequeue();
+                keypressed++;
+                pressedkeys.Enqueue(e.Key);
+                iT += 5;
+                if(iT>hackingstring.Length)
+                {
+                    spaceholder = hackingstring;
+                    iT = 0;
+                }
+            }
+
         }
     }
 }

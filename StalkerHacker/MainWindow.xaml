@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ablak"
         mc:Ignorable="d"
-        Title="StalkerHacker" Height="600" Width="600" Drop="Window_Drop" AllowDrop="True">
+        Title="StalkerHacker" Height="600" Width="600" Drop="Window_Drop" AllowDrop="True" KeyDown="Window_KeyDown">
     <Grid Background="#FF2E2E2E">
         <Button x:Name="gomb" Content="Crack" HorizontalAlignment="Left" Margin="281,66,0,0" VerticalAlignment="Top" Width="150" Click="gomb_Click" Height="50" Background="#FF3FFF48" BorderBrush="#FF0E3C00" FontSize="30" FontWeight="Bold"/>
         <Label Content="Floppy Disk Drive (A:) name" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top" Width="334" Height="41" Foreground="Lime" FontSize="20"/>
