@@ -32,7 +32,8 @@ namespace ablak
         int iT = 0;
         string hackingstring = "";
         string spaceholder = "";
-            
+        string outputstring = "";
+
 
 
 
@@ -74,7 +75,7 @@ namespace ablak
             if(animate)
             {
                 //  progres += step;
-                outputbox.Text = spaceholder+hackingstring.Substring(0,iT); 
+                outputbox.Text = spaceholder+outputstring; 
                 
                 //if (iT >= flipbook.Length)
                  //   iT = 0;
@@ -146,6 +147,7 @@ namespace ablak
                     spaceholder = hackingstring;
                     iT = 0;
                 }
+                outputstring = hackingstring.Substring(0, iT);
             }
 
         }
